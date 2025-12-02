@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.10)
+project(sort_neon_kml C)
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O2 -march=armv8-a+simd")
+include_directories(/usr/local/kml/include)
+link_directories(/usr/local/kml/lib/noarch)
+add_executable(sort_neon_kml sort_neon_kml.c)
+target_link_libraries(sort_neon_kml km m)
